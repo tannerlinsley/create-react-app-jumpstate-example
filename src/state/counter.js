@@ -1,6 +1,8 @@
 import Jumpstate from 'jumpstate'
 
 export default Jumpstate({
+  actionCreator: true
+}, {
   // Initial State
   initial: {
     count: 0
