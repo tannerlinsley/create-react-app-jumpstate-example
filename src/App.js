@@ -1,6 +1,10 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+//
+import CounterState from './state/counter'
+//
+import logo from './logo.svg'
+import './App.css'
 
 class App extends Component {
   render() {
@@ -11,11 +15,17 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          <h1>{ this.props.counter.count }</h1>
+          <button onClick={ () => CounterState.decrement() }>Decrement</button>
+          <button onClick={ () => CounterState.increment() }>Increment</button>
         </p>
       </div>
     );
   }
 }
 
-export default App;
+export default connect(state => {
+  return {
+    counter: state.counter
+  }
+})(App)
