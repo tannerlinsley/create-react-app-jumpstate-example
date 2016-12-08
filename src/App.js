@@ -6,8 +6,6 @@ import CounterState from './state/counter'
 import logo from './logo.svg'
 import './App.css'
 
-console.log(CounterState.increment())
-
 class App extends Component {
   render() {
     return (
@@ -15,19 +13,12 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
+          <h4>Featuring Redux + Jumpstate</h4>
         </div>
-        <div className="Adp-intro">
+        <div className="App-intro">
           <h1>{ this.props.counter.count }</h1>
-          <button onClick={ () => {
-            this.props.dispatch(CounterState.decrement())
-          } }>
-            Decrement
-          </button>
-          <button onClick={ () => {
-            this.props.dispatch(CounterState.increment())
-          } }>
-            Increment
-          </button>
+          <button onClick={ () => CounterState.decrement() }>Decrement</button>
+          <button onClick={ () => CounterState.increment() }>Increment</button>
         </div>
       </div>
     );

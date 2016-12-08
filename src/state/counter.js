@@ -1,8 +1,6 @@
-import Jumpstate from 'jumpstate'
+import { State } from 'jumpstate'
 
-export default Jumpstate({
-  actionCreator: true
-}, {
+export default State({
   // Initial State
   initial: {
     count: 0
