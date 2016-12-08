@@ -13,12 +13,13 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
+          <h4>Featuring Redux + Jumpstate</h4>
         </div>
-        <p className="App-intro">
+        <div className="App-intro">
           <h1>{ this.props.counter.count }</h1>
           <button onClick={ () => CounterState.decrement() }>Decrement</button>
           <button onClick={ () => CounterState.increment() }>Increment</button>
-        </p>
+        </div>
       </div>
     );
   }
